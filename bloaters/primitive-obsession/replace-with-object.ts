@@ -1,6 +1,6 @@
 // The Problem
 // A class (or group of classes) contains a data field. The field has its own behavior and associated data.
-class SomeOrder {
+class Order {
   customerName: string = "";
   customerEmail: string = "";
   customerPhone: string = "";
@@ -34,7 +34,7 @@ class SomeOrder {
 
 // The Solution
 // Create a new class, place the old field and its behavior in the class, and store the object of the class in the original class.
-class RefactoredSomeOrder {
+class RefactoredOrder {
   customer: Customer;
   itemPrice: number = 0.0;
 
@@ -85,11 +85,11 @@ class Customer {
 }
 
 // Usage example
-const order1 = new SomeOrder("John Doe", "john@vip.com", "1234567890", 150.0);
+const order1 = new Order("John Doe", "john@vip.com", "1234567890", 150.0);
 console.log("Original:", order1.getDetails());
 console.log("Is VIP:", order1.isVipCustomer());
 
-const order2 = new RefactoredSomeOrder(
+const order2 = new RefactoredOrder(
   "John Doe",
   "john@vip.com",
   "1234567890",
