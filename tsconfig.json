@@ -1,0 +1,11 @@
+{
+  "compilerOptions": {
+    "lib": [
+      "ES2024",
+      "DOM"
+    ],
+    "module": "nodenext",
+    "target": "ES2024",
+    "moduleDetection": "force"
+  }
+}
