@@ -70,9 +70,9 @@ class Order {
 
     if (this.customer == null) {
       plan = BillingPlan.Basic();
-    } else {
-      plan = this.customer.getPlan();
     }
+
+    plan = this.customer.getPlan();
 
     return plan.getPrice();
   }
@@ -152,9 +152,9 @@ class RefactoredOrder {
   sendNotification(): void {
     if (this.customer.isNull()) {
       console.log("Skipping notification for guest customer");
-    } else {
-      console.log(`Sending notification to ${this.customer.getEmail()}`);
     }
+
+    console.log(`Sending notification to ${this.customer.getEmail()}`);
   }
 }
 
