@@ -108,3 +108,9 @@ console.log("Original order total:", order.calculateTotal());
 const refactoredOrder = new RefactoredOrder();
 console.log("Refactored order total:", refactoredOrder.calculateTotal());
 
+// Benefits of Move Method:
+// 1. Improved separation of concerns: Discounts logic is now in a dedicated class.
+// 2. Easier to test and maintain: Discounts can be tested independently.
+// 3. Enhanced readability: The main Order class is cleaner and focused on order logic.
+// 4. Reusability: Discounts logic can be reused in other parts of the application.
+// 5. Reduced complexity: The original method is simplified, making it easier to understand and modify in the future.
