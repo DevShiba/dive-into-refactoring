@@ -121,3 +121,6 @@ developer.addProgrammingLanguage("TypeScript");
 developer.addProgrammingLanguage("Python");
 console.log(`${developer.name} is a ${developer.getExperienceLevel()} developer`);
 console.log(`Skill bonus: $${developer.getSkillBonus()}`);
+
+// Benefits of the Refactoring
+// 1. Improved readability: Each class now has a clear purpose and responsibility.
