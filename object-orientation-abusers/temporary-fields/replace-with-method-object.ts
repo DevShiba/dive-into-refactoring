@@ -135,7 +135,6 @@ class Order {
     );
   }
 
-  
   getItemCount(): number {
     return this.items.length;
   }
@@ -230,9 +229,8 @@ class PriceCalculator {
         this.primaryBasePrice += item.price * item.quantity;
       } else if (item.category === "clothing") {
         this.secondaryBasePrice += item.price * item.quantity * 0.95;
-      } else {
-        this.tertiaryBasePrice += item.price * item.quantity * 1.1;
       }
+      this.tertiaryBasePrice += item.price * item.quantity * 1.1;
     }
   }
 
