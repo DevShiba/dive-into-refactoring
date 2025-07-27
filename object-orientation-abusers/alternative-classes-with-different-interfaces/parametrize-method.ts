@@ -50,7 +50,7 @@ class DiscountCalculator {
   }
 
   calculateSeniorDiscount(amount: number): number {
-    const discount = 0.20; // 20% senior discount
+    const discount = 0.2; // 20% senior discount
     return amount * (1 - discount);
   }
 
@@ -72,40 +72,60 @@ type CustomerType = "student" | "senior" | "employee";
 class UnifiedEmailService {
   sendEmail(recipient: string, type: EmailType): void {
     console.log(`Sending ${type} email to ${recipient}`);
-    
+
     const emailConfig = this.getEmailConfig(type);
     console.log(`Subject: ${emailConfig.subject}`);
     console.log(`Template: ${emailConfig.template}`);
   }
 
-  private getEmailConfig(type: EmailType): { subject: string; template: string } {
+  private getEmailConfig(type: EmailType): {
+    subject: string;
+    template: string;
+  } {
     switch (type) {
       case "welcome":
-        return { subject: "Welcome to our platform!", template: "welcome-template" };
+        return {
+          subject: "Welcome to our platform!",
+          template: "welcome-template",
+        };
       case "password-reset":
-        return { subject: "Reset your password", template: "password-reset-template" };
+        return {
+          subject: "Reset your password",
+          template: "password-reset-template",
+        };
       case "invoice":
-        return { subject: "Your invoice is ready", template: "invoice-template" };
+        return {
+          subject: "Your invoice is ready",
+          template: "invoice-template",
+        };
     }
   }
 }
 
 class UnifiedNotificationService {
-  sendNotification(message: string, userId: string, priority: NotificationPriority): void {
+  sendNotification(
+    message: string,
+    userId: string,
+    priority: NotificationPriority
+  ): void {
     const config = this.getNotificationConfig(priority);
     console.log(`[${config.label}] Notification to user ${userId}: ${message}`);
     console.log(`Priority: ${config.priorityLevel}`);
     console.log(`Channel: ${config.channel}`);
   }
 
-  private getNotificationConfig(priority: NotificationPriority): { 
-    label: string; 
-    priorityLevel: string; 
-    channel: string; 
+  private getNotificationConfig(priority: NotificationPriority): {
+    label: string;
+    priorityLevel: string;
+    channel: string;
   } {
     switch (priority) {
       case "urgent":
-        return { label: "URGENT", priorityLevel: "HIGH", channel: "push + email" };
+        return {
+          label: "URGENT",
+          priorityLevel: "HIGH",
+          channel: "push + email",
+        };
       case "normal":
         return { label: "NORMAL", priorityLevel: "MEDIUM", channel: "push" };
       case "low":
@@ -125,7 +145,7 @@ class UnifiedDiscountCalculator {
       case "student":
         return 0.15; // 15% discount
       case "senior":
-        return 0.20; // 20% discount
+        return 0.2; // 20% discount
       case "employee":
         return 0.25; // 25% discount
     }
@@ -147,9 +167,18 @@ notificationService.sendNormalNotification("New message", "user123");
 notificationService.sendLowPriorityNotification("Newsletter", "user123");
 
 const discountCalculator = new DiscountCalculator();
-console.log("Student discount:", discountCalculator.calculateStudentDiscount(100));
-console.log("Senior discount:", discountCalculator.calculateSeniorDiscount(100));
-console.log("Employee discount:", discountCalculator.calculateEmployeeDiscount(100));
+console.log(
+  "Student discount:",
+  discountCalculator.calculateStudentDiscount(100)
+);
+console.log(
+  "Senior discount:",
+  discountCalculator.calculateSeniorDiscount(100)
+);
+console.log(
+  "Employee discount:",
+  discountCalculator.calculateEmployeeDiscount(100)
+);
 
 console.log("\n=== After Parameterize Method ===");
 
@@ -159,28 +188,41 @@ unifiedEmailService.sendEmail("user@example.com", "password-reset");
 unifiedEmailService.sendEmail("user@example.com", "invoice");
 
 const unifiedNotificationService = new UnifiedNotificationService();
-unifiedNotificationService.sendNotification("System maintenance", "user123", "urgent");
+unifiedNotificationService.sendNotification(
+  "System maintenance",
+  "user123",
+  "urgent"
+);
 unifiedNotificationService.sendNotification("New message", "user123", "normal");
 unifiedNotificationService.sendNotification("Newsletter", "user123", "low");
 
 const unifiedDiscountCalculator = new UnifiedDiscountCalculator();
-console.log("Student discount:", unifiedDiscountCalculator.calculateDiscount(100, "student"));
-console.log("Senior discount:", unifiedDiscountCalculator.calculateDiscount(100, "senior"));
-console.log("Employee discount:", unifiedDiscountCalculator.calculateDiscount(100, "employee"));
+console.log(
+  "Student discount:",
+  unifiedDiscountCalculator.calculateDiscount(100, "student")
+);
+console.log(
+  "Senior discount:",
+  unifiedDiscountCalculator.calculateDiscount(100, "senior")
+);
+console.log(
+  "Employee discount:",
+  unifiedDiscountCalculator.calculateDiscount(100, "employee")
+);
 
 // Now classes can be used polymorphically
 const emailServices = [new UnifiedEmailService()];
 const notificationServices = [new UnifiedNotificationService()];
 const discountCalculators = [new UnifiedDiscountCalculator()];
 
-emailServices.forEach(service => {
+emailServices.forEach((service) => {
   service.sendEmail("test@example.com", "welcome");
 });
 
-notificationServices.forEach(service => {
+notificationServices.forEach((service) => {
   service.sendNotification("Test message", "user456", "normal");
 });
 
-discountCalculators.forEach(calculator => {
+discountCalculators.forEach((calculator) => {
   console.log("Test discount:", calculator.calculateDiscount(50, "student"));
 });
