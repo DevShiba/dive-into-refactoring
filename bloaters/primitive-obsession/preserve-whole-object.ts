@@ -1,5 +1,5 @@
 // The Problem
-// Preserve Whole Object: You get several values from an object and then pass them as parameters to a method
+// You get several values from an object and then pass them as parameters to a method
 class Rectangle {
   width: number;
   height: number;

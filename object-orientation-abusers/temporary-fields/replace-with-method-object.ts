@@ -20,7 +20,6 @@ class Order {
   private customerType: CustomerType = CustomerType.REGULAR;
   private region: string = "US";
   private seasonalDiscount: number = 0;
-
   // Temporary fields - only used during price calculation
   private primaryBasePrice: number = 0;
   private secondaryBasePrice: number = 0;
