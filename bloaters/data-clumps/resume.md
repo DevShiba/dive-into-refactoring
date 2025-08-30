@@ -172,6 +172,8 @@ class UserService {
 }
 ```
 
+_For detailed code examples, see the files in this folder._
+
 **Benefits**: Parameter objects enable type safety at compile time, making it impossible to pass arguments in the wrong order. The structured approach also makes it easier to add validation logic and default values at the object level rather than scattered across multiple method calls.
 
 **Key Insight**: This refactoring often reveals opportunities for further improvements like validation methods, computed properties, or business logic that naturally belongs with the data.
@@ -222,6 +224,8 @@ class OrderProcessor {
   }
 }
 ```
+
+_For detailed code examples, see the files in this folder._
 
 **Code Issues**: Methods require extracting multiple properties from the same Customer object, creating repetitive parameter patterns. Adding new customer-related functionality requires updating multiple method signatures.
 
