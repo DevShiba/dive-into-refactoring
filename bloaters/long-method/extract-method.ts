@@ -52,3 +52,15 @@ class InvoiceRefactored {
     this.PrintDetails();
   }
 }
+
+// Usage example
+const invoice = new Invoice();
+invoice.name = "John Doe";
+console.log("=== Original Invoice ===");
+invoice.PrintOwing();
+
+const refactoredInvoice = new InvoiceRefactored();
+refactoredInvoice.name = "Jane Smith";
+console.log("\n=== Refactored Invoice ===");
+refactoredInvoice.PrintOwing();
+refactoredInvoice.PrintDetails();

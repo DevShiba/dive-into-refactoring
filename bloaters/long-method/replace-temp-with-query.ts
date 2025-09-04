@@ -36,3 +36,13 @@ class PriceCalculatorRefactored {
     return this.BasePrice() * 0.98;
   }
 }
+
+// Usage example
+const calculator = new PriceCalculator();
+console.log("=== Original Price Calculator ===");
+console.log(`Total: $${calculator.CalculateTotal()}`);
+
+const refactoredCalculator = new PriceCalculatorRefactored();
+console.log("\n=== Refactored Price Calculator ===");
+console.log(`Base Price: $${refactoredCalculator.BasePrice()}`);
+console.log(`Total: $${refactoredCalculator.CalculateTotal()}`);
