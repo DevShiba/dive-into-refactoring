@@ -3,8 +3,9 @@
 Bloaters are code smells that manifest as oversized code constructs—methods, classes, or modules that have grown beyond manageable proportions. These violations of the Single Responsibility Principle make code difficult to understand, test, and maintain. Bloaters typically emerge through incremental feature additions, copy-paste programming, and lack of refactoring discipline. As requirements evolve, developers often take shortcuts by adding functionality to existing code rather than restructuring, leading to decreased cohesion and increased coupling. This technical debt accumulates gradually, making the bloated code increasingly resistant to change and prone to bugs.
 
 The main types of bloaters include:
+
 - **Long Method**
-- **Large Class** 
+- **Large Class**
 - **Primitive Obsession**
 - **Long Parameter List**
 - **Data Clumps**
