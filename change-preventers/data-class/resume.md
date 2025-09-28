@@ -2,7 +2,7 @@
 
 A Data Class is a type of class that primarily serves as a "dumb data holder". It typically consists only of fields and their corresponding getter and setter methods, without incorporating any significant behavior or business logic. In software development, particularly within object-oriented paradigms, the presence of a Data Class is often considered a "bad smell" in the code, signaling potential design issues. This concept contrasts with Value Objects, which are meant to be conceptually whole, interchangeable, and ideally immutable, offering design freedoms for simplification and optimization.
 
-## Why it's a Problem?
+## Why it's a Problem? 
 
 - **Misplaced Behavior and Lack of Encapsulation**: A primary issue is that behavior and logic that logically belong with the data are instead implemented in other classes, which then manipulate the Data Class in excessive detail. This often leads to the "Feature Envy" code smell, where a function in one module spends more time communicating with data in another module than within its own.
 - **Reduced Modifiability and Maintainability**: When behavior related to a Data Class is scattered across the codebase, any changes to the data structure or the rules governing it require modifications in multiple places. This increases the effort and risk of introducing bugs during maintenance.
