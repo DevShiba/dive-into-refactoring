@@ -116,13 +116,6 @@ class OrderService {
   }
 }
 
-// TODO: Your task is to refactor this code using Move Field technique
-// 1. Create an Address class
-// 2. Move all address-related fields (street, city, zipCode, country) to the Address class
-// 3. Move all address-related methods to the Address class
-// 4. Update the other classes to use the Address class instead of individual fields
-// 5. Show how this eliminates shotgun surgery by centralizing address logic
-
 // Example usage of the problematic code:
 const customerData: CustomerData = {
   name: "John Doe",
